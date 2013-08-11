@@ -23,7 +23,9 @@
             </h1>
         </header>
 
-        <section class="hub" aria-label="Main content" role="main" data-win-control="WinJS.UI.Hub">
+        <div class="SeZo" data-win-control="WinJS.UI.SemanticZoom">
+            <!-- zoomed in view of the hub -->
+            <section class="hub" aria-label="Main content" role="main" data-win-control="WinJS.UI.Hub">
 
             <!-- Demos section -->
             <!-- TODO: when demos page is finished, just remove the isHeaderStatic flag below -->
@@ -135,6 +137,14 @@
             </div>
 
         </section>
+            <!-- zoomed out view of the hub -->
+            <div class="ZoomedOutListView" data-win-control="WinJS.UI.ListView" data-win-options="{
+                itemTemplate: select('#zoomedOutListViewItemTemplate'),
+                itemDataSource: select('.win-hub').winControl.sections.dataSource,
+                swipeBehavior: WinJS.UI.SwipeBehavior.none,
+                selectionMode: WinJS.UI.SelectionMode.none
+            }">
+            </div>
     </div>
 </body>
 </html>
